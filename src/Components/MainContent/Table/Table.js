@@ -3,54 +3,69 @@ import TableHeader from './TableHeader';
 import TableItem from './TableItem';
 import dataStudent from '../../../DataStudent.json';
 
-localStorage.setItem('myData', JSON.stringify(dataStudent));
-const dataStorage = JSON.parse(localStorage.getItem("myData"));
-console.log('typeof dataStorage :', dataStorage);
+
+
 class Table extends Component {
  constructor(props) {
-   super(props);
+  super(props);
+
    this.state = {
-     data:dataStorage
+     data:JSON.parse(localStorage.getItem('userData'))
    }
  }
+
+ 
+ componentWillMount() {
+   if (localStorage.getItem('userData') ===null){
+     localStorage.setItem('userData',JSON.stringify(dataStudent));
+   }else {
+     const temp = JSON.parse(localStorage.getItem('userData'));
+      this.setState({
+        data:temp
+      })
+   }
+
+ }
+ 
+ 
  deleteStudent(index) {
-  dataStorage[index].note = "out";
+  this.state.data[index].note = 'out';
   this.setState({
-    data:dataStorage
+    data:this.state.data
 });
-  console.log('object :', dataStorage);
+  localStorage.setItem('userData',JSON.stringify(this.state.data));
+
 };
 
     renderItem (){
-     
+
       const listItems = this.state.data.map(
         (item, index) => {
           if(item.note !== "out") {
-          return <TableItem key={index} item = {item} index={index} deleteStudent={this.deleteStudent.bind(this)}/>
+          return <TableItem key={index} item = {item} index={index} deleteStudent={() => this.deleteStudent(index)}/>
           }
         }
       );
       return listItems
     };
 
-   
+
 
     
     render() {
       // console.log('object :', dataStudent);
         return (
             <div className="col-9">
-  <table className="table table-hover table-striped table-{1:striped|sm|bordered|hover|inverse} table-responsive">
-    <thead className="thead-inverse|thead-default">
-     <TableHeader />
-    </thead>
-    <tbody>
-    { this.renderItem() }
-    
+              <table className="table table-hover table-striped table-{1:striped|sm|bordered|hover|inverse} table-responsive">
+                <thead className="thead-inverse|thead-default">
+                <TableHeader />
+                </thead>
+                <tbody>
+                { this.renderItem() }                
 
-    </tbody>
-  </table>
-</div>
+                </tbody>
+              </table>
+            </div>
 
         );
     }

@@ -6,7 +6,7 @@ class TableItem extends Component {
         
     }
     test (e){
-      console.log('this.props.deleteStudent() :', this.props.deleteStudent(e.target.value));
+      console.log('this.props.deleteStudent() :', this.props.deleteStudent(e));
       
     }
     
@@ -24,11 +24,11 @@ class TableItem extends Component {
             <td>{this.props.item.note}</td>
             <td>
               <div className="btn btn-group">
-                <button className="btn btn-warning" value={this.props.index} onClick= {(e) => this.test(e) } >
+                <button className="btn btn-warning" >
                   <i className="far fa-edit mr-1" />
                    Sửa
                 </button>
-                <button className="btn btn-danger">
+                <button className="btn btn-danger"  value={this.props.index} onClick= {() => this.test(this.props.index) }>
                   <i className="fas fa-user-times mr-1" />
                    Xóa
                 </button>

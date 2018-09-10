@@ -29,17 +29,22 @@ class Table extends Component {
  
  
  deleteStudent(index) {
-  this.state.data[index].note = 'out';
+   let dataClone = JSON.stringify(this.state.data);
+   dataClone =JSON.parse(dataClone);
+   
+   dataClone[index].note = 'out';
   this.setState({
-    data:this.state.data
+    data:dataClone
 });
-  localStorage.setItem('userData',JSON.stringify(this.state.data));
+
+  localStorage.setItem('userData',JSON.stringify(dataClone));
 
 };
 
     renderItem (){
-      
-      const listItems = this.state.data.map(
+      let dataClone = JSON.stringify(this.state.data);
+      dataClone =JSON.parse(dataClone);
+      const listItems = dataClone.map(
         (item, index) => {
           if(item.note !== "out") {
           return <TableItem key={index} item = {item} index={index} deleteStudent={() => this.deleteStudent(index)}/>

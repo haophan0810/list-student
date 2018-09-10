@@ -4,7 +4,7 @@ class AddUser extends Component {
   render() {
     return (
 
-      <div className="modal fade col-12" id="add-user" tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="add-user" tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">

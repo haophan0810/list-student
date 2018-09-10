@@ -24,7 +24,7 @@ class TableItem extends Component {
             <td>{this.props.item.note}</td>
             <td>
               <div className="btn btn-group">
-                <button className="btn btn-warning" >
+                <button className="btn btn-warning" data-toggle="modal" data-target="#edit-user">
                   <i className="far fa-edit mr-1" />
                    Sửa
                 </button>

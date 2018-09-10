@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class TableHeader extends Component {
+    
+    componentWillMount() {
+        console.log("table");
+    }
+    
     render() {
         return (
         <tr>

@@ -5,7 +5,9 @@ import AddUser from './AddUser/AddUser.js';
 import ModifierStudent from './Popup/ModifierStudent.js';
 import Data from '../../DataStudent.json';
 import AddButton from './AddUser/AddButton.js';
+import EditUser from './EditUser/EditUser.js';
 class MainContent extends Component {
+    
     render() {
         return (
             <div>
@@ -15,6 +17,7 @@ class MainContent extends Component {
                     <Search />
                     <AddButton />
                     <AddUser />
+                    <EditUser />
                     </div>
                     </div>
                 </div>

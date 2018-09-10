@@ -5,12 +5,19 @@ import './App.css';
 import Test from './Components/Test.js';
 
 class App extends Component {
+
+  
+  componentWillMount() {
+    console.log("app");
+  }
+  
+
   render() {
     return (
       <div className="App">
        <Header />
        <MainContent />
-       <Test />
+       
       </div>
     );
   }

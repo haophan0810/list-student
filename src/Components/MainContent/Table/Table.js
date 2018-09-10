@@ -38,7 +38,7 @@ class Table extends Component {
 };
 
     renderItem (){
-
+      
       const listItems = this.state.data.map(
         (item, index) => {
           if(item.note !== "out") {
@@ -55,8 +55,8 @@ class Table extends Component {
     render() {
       // console.log('object :', dataStudent);
         return (
-            <div className="col-9">
-              <table className="table table-hover table-striped table-{1:striped|sm|bordered|hover|inverse} table-responsive">
+            <div className="col-12">
+              <table className="table table-hover table-striped table-responsive">
                 <thead className="thead-inverse|thead-default">
                 <TableHeader />
                 </thead>

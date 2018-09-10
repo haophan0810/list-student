@@ -6,4 +6,9 @@
 
 td {
   font-size: 12px;
+  text-align: center;
+}
+
+th {
+  text-align: center;
 }

@@ -5,11 +5,7 @@ const showPopup = {
     display: "block"
 }
 class ModifierStudent extends Component {
-    constructor(props) {
-        super(props);
-        
-    }
-    
+      
     render() {
         return (
             <div>

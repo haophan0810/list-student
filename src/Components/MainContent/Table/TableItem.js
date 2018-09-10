@@ -13,7 +13,7 @@ class TableItem extends Component {
     render() {
         return (
             <tr>
-            <td >{this.props.item.id}</td>
+            <td >{this.props.index+1}</td>
             <td>{this.props.item.name}</td>
             <td>{this.props.item.email}</td>            
             <td>{this.props.item.phone}</td>

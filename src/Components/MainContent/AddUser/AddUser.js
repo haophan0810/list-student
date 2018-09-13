@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import TextWarning from '../TextWarning';
 
 class AddUser extends Component {
     constructor(props) {
       super(props);
       this.state = {
         dismiss:'',
-        default:this.props.default
-
-
+        default:this.props.default,
+        warningId:false,
+        warningName:false,
+        warningEmail:false
       }
     }
     checkValid (n,value){
@@ -40,8 +42,6 @@ class AddUser extends Component {
         default:true
       })
       this.props.updateStudent(newStudent);
-    
-      
      
     }
     
@@ -66,7 +66,7 @@ class AddUser extends Component {
               <div className="card">
               
                 <div className="card-body">     
-        <form method="post" onSubmit={() => this.handleSubmit}>
+        <form method="post">
                         
                 <div className="form-group">
                     <label htmlFor="id-name">ID</label>
@@ -76,6 +76,7 @@ class AddUser extends Component {
                         type="number" 
                         name="id" id="id-name" 
                         className="form-control" placeholder="Id" aria-describedby="helpId" required />
+                    <TextWarning />
                   </div>
                   <div className="form-group">
                     <label htmlFor="add-name">Họ Tên</label>
@@ -84,6 +85,7 @@ class AddUser extends Component {
                         onChange = { (event) => this.getValueInput(event)} 
                         type="text" 
                         name="name" id="add-name" className="form-control" placeholder="Tên" aria-describedby="helpId" />
+                    <TextWarning />
                   </div>
                   <div className="form-group">
                     <label htmlFor="add-email">email</label>
@@ -92,6 +94,7 @@ class AddUser extends Component {
                         onChange = { (event) => this.getValueInput(event)} 
                         type="email" 
                         name="email" id="add-email" className="form-control" placeholder="Email" aria-describedby="helpId" />
+                    <TextWarning />
                   </div>
                   <div className="form-group">
                     <label htmlFor="add-start-day">Ngày nhập học</label>

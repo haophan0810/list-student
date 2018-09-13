@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 class TableItem extends Component {
-    constructor(props) {
-        super(props);
-        
-    }
+
     test (e){
       console.log('this.props.deleteStudent() :', this.props.deleteStudent(e));
       

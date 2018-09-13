@@ -15,11 +15,12 @@ constructor(props) {
 
   
   componentWillMount() {
+    console.log('App');
     if (localStorage.getItem('dataStorage')===null){
         localStorage.setItem('dataStorage',JSON.stringify(dataStudent));
     }else {
     const temp =JSON.parse(localStorage.getItem('dataStorage'));
-    console.log('temp :', temp);
+    // console.log('temp :', temp);
       this.setState({
         data:temp
       })
@@ -39,11 +40,11 @@ constructor(props) {
   }
 
   render() {
-    console.log('this.state.data :', this.state.data);
+    // console.log('this.state.data :', this.state.data);
     return (
       <div className="App">
        <Header />
-       <MainContent dataStudent = { this.state.data} addNewUser={this.addNewUser} />
+       <MainContent dataStudent = {JSON.parse(localStorage.getItem('dataStorage'))} addNewUser={this.addNewUser} />
        
       </div>
     );

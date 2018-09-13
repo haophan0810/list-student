@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
 import TableHeader from './TableHeader';
 import TableItem from './TableItem';
-import dataStudent from '../../../DataStudent.json';
-
-
 
 class Table extends Component {
 
-
+  
     renderItem (){
       
       const listItems = this.props.dataStudent.map(
         (item, index) => {
+          let tableItem;
           if(item.note !== "out") {
-          return <TableItem key={index} item = {item} index={index} deleteStudent={() => this.deleteStudent(index)}/>
+          tableItem= <TableItem key={index} item = {item} index={index} deleteStudent={() => this.deleteStudent(index)}/>
           }
+          return tableItem;
         }
       );
-      return listItems
+      return listItems;
     };
-
-
-
     
     render() {
       console.log('object :', this.props.dataStudent);
         return (
             <div className="col-12">
-              <table className="table table-hover table-striped table-responsive">
-                <thead className="thead-inverse|thead-default">
+              <table className="table table-hover table-striped table-responsive ">
+                <thead className="thead-inverse|thead-default ">
                 <TableHeader />
                 </thead>
                 <tbody>

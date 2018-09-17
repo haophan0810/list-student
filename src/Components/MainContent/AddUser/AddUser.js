@@ -13,6 +13,8 @@ class AddUser extends Component {
       }
     }
     checkValid (n,value){
+      const checkValid = /[a-z]/g;
+      
       if ((n ==='id' && value ==='') || (n==="name" && value==='')){
         return false;
       }else{

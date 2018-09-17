@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class TextWarning extends Component {
     render() {
         return (
-            <span>
-                
+            <span className={"d-none"}>
+                hello
             </span>
         );
     }

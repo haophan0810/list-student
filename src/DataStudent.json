@@ -260,19 +260,5 @@
             "phone": "0904070848",
             "email": "anhvu.261093@gmail.com",
             "timeTrainning": "1/2"
-        },
-        {
-            "name": "Khiêm Duy Trung",
-            "birthday": "07/11/1984",
-            "startDay": "27/08/2018",
-            "phone": "0975752408",
-            "email": "duytrung17@gmail.com"
-        },
-        {
-            "name": "Nguyễn Hải Phong",
-            "birthday": "06/10/1994",
-            "startDay": "28/08/2018",
-            "phone": "01666727794",
-            "email": "phongnh106@gmail.com"
         }
     ]

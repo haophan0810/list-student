@@ -6,34 +6,34 @@ import dataStudent from './DataStudent.json';
 
 
 class App extends Component {
-constructor(props) {
-  super(props);
-  this.state={
-    data: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: ''
+    }
   }
-}
 
-  
+
   componentWillMount() {
     console.log('App');
-    if (localStorage.getItem('dataStorage')===null){
-        localStorage.setItem('dataStorage',JSON.stringify(dataStudent));
-    }else {
-    const temp =JSON.parse(localStorage.getItem('dataStorage'));
-    // console.log('temp :', temp);
+    if (localStorage.getItem('dataStorage') === null) {
+      localStorage.setItem('dataStorage', JSON.stringify(dataStudent));
+    } else {
+      const temp = JSON.parse(localStorage.getItem('dataStorage'));
+      // console.log('temp :', temp);
       this.setState({
-        data:temp
+        data: temp
       })
     }
   }
-  
-  addNewUser= (newStudent) => {
-    let temp =JSON.parse(localStorage.getItem('dataStorage'));
+
+  addNewUser = (newStudent) => {
+    let temp = JSON.parse(localStorage.getItem('dataStorage'));
     // console.log('newStudent :', newStudent);
     temp.push(newStudent);
-    localStorage.setItem('dataStorage',JSON.stringify(temp));
+    localStorage.setItem('dataStorage', JSON.stringify(temp));
     this.setState({
-    data: JSON.parse(localStorage.getItem('dataStorage'))
+      data: dataStudent
 
     })
     // console.log('temp :', temp);
@@ -43,9 +43,9 @@ constructor(props) {
     // console.log('this.state.data :', this.state.data);
     return (
       <div className="App">
-       <Header />
-       <MainContent dataStudent = {JSON.parse(localStorage.getItem('dataStorage'))} addNewUser={this.addNewUser} />
-       
+        <Header />
+        <MainContent dataStudent={JSON.parse(localStorage.getItem('dataStorage'))} addNewUser={this.addNewUser} />
+
       </div>
     );
   }

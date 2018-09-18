@@ -20,7 +20,7 @@ class Table extends Component {
     };
     
     render() {
-      console.log('object :', this.props.dataStudent);
+      // console.log('object :', this.props.dataStudent);
         return (
             <div className="col-12">
               <table className="table table-hover table-striped table-responsive ">

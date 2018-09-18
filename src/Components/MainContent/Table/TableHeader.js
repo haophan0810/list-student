@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 class TableHeader extends Component {
     
-    componentWillMount() {
-        console.log("table");
-    }
-    
     render() {
         return (
         <tr>
@@ -19,7 +15,7 @@ class TableHeader extends Component {
             <th>Progress</th>
             <th>Note</th>
             <th>Thao Tác</th>
-         </tr>
+        </tr>
         );
     }
 }
